@@ -1,0 +1,109 @@
+Traget IP: <---- IP ADD. ----> | 2024-03-12 16:34:24 
+
+Host Status : Up 
+
+=== Port Scanning === 
+PORT     STATE SERVICE       VERSION
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds?
+3306/tcp open  mysql?
+5357/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port3306-TCP:V=7.94SVN%I=7%D=3/12%Time=65F0BC55%P=x86_64-pc-linux-gnu%r
+
+=== OS DETECTION === 
+Device type: bridge|general purpose
+Running (JUST GUESSING): Oracle Virtualbox (95%), QEMU (91%)
+OS CPE: cpe:/o:oracle:virtualbox cpe:/a:qemu:qemu
+Aggressive OS guesses: Oracle Virtualbox (95%), QEMU user mode network gateway (91%)
+No exact OS matches for host (test conditions non-ideal).
+
+=== Firewall Detection === 
+All 1000 scanned ports on <---- IP ADD. ----> are in ignored states.
+Not shown: 1000 unfiltered tcp ports (reset)
+
+=== Vulnerability Scan === 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-03-12 16:34 EDT
+Pre-scan script results:
+|_http-robtex-shared-ns: *TEMPORARILY DISABLED* due to changes in Robtex's API. See https://www.robtex.com/api/
+| targets-asn: 
+|_  targets-asn.asn is a mandatory parameter
+|_hostmap-robtex: *TEMPORARILY DISABLED* due to changes in Robtex's API. See https://www.robtex.com/api/
+Nmap scan report for <---- IP ADD. ---->
+Host is up (0.0019s latency).
+Not shown: 995 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+|_smb-enum-services: ERROR: Script execution failed (use -d to debug)
+445/tcp  open  microsoft-ds
+|_smb-enum-services: ERROR: Script execution failed (use -d to debug)
+3306/tcp open  mysql
+|_ssl-poodle: ERROR: Script execution failed (use -d to debug)
+|_rsa-vuln-roca: ERROR: Script execution failed (use -d to debug)
+|_ssl-ccs-injection: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: ERROR: Script execution failed (use -d to debug)
+|_ssl-heartbleed: ERROR: Script execution failed (use -d to debug)
+|_tls-ticketbleed: ERROR: Script execution failed (use -d to debug)
+|_mysql-info: ERROR: Script execution failed (use -d to debug)
+|_mysql-vuln-cve2012-2122: ERROR: Script execution failed (use -d to debug)
+|_tls-nextprotoneg: ERROR: Script execution failed (use -d to debug)
+|_ssl-date: ERROR: Script execution failed (use -d to debug)
+|_ssl-dh-params: ERROR: Script execution failed (use -d to debug)
+|_ssl-cert: ERROR: Script execution failed (use -d to debug)
+|_banner:     jHost 'Ak' is not allowed to connect to ...
+5357/tcp open  wsdapi
+
+Host script results:
+| smb-protocols: 
+|   dialects: 
+|     2:0:2
+|     2:1:0
+|     3:0:0
+|     3:0:2
+|_    3:1:1
+| smb2-time: 
+|   date: 2024-03-12T20:35:10
+|_  start_date: N/A
+|_fcrdns: FAIL (No PTR record)
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_msrpc-enum: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+| smb2-capabilities: 
+|   2:0:2: 
+|     Distributed File System
+|   2:1:0: 
+|     Distributed File System
+|     Leasing
+|     Multi-credit operations
+|   3:0:0: 
+|     Distributed File System
+|     Leasing
+|     Multi-credit operations
+|   3:0:2: 
+|     Distributed File System
+|     Leasing
+|     Multi-credit operations
+|   3:1:1: 
+|     Distributed File System
+|     Leasing
+|_    Multi-credit operations
+|_path-mtu: PMTU == 1500
+| smb-mbenum: 
+|_  ERROR: Failed to connect to browser service: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_dns-brute: Can't guess domain of "<---- IP ADD. ---->"; use dns-brute.domain script argument.
+| qscan: 
+| PORT  FAMILY  MEAN (us)  STDDEV   LOSS (%)
+| 135   0       3378.70    1163.69  0.0%
+| 139   0       3156.20    1371.95  0.0%
+| 445   0       3829.30    3670.43  0.0%
+| 3306  0       3032.30    950.20   0.0%
+|_5357  0       3449.40    1135.69  0.0%
+|_ipidseq: Unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 83.17 seconds
